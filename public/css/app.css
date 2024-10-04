@@ -546,7 +546,10 @@ pre code {
     margin-right: auto;
     margin-left: auto;
 }
-
+footer{
+    background-color: #343a40;
+    color: white;
+}
 @media (min-width: 576px) {
     .container-sm, .container {
         max-width: 540px;
