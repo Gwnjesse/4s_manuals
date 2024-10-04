@@ -1,9 +1,12 @@
-
 <footer>
-	© {{ __('misc.copyright') }}
-    {{ "Wij zijn Legacy-app. Wij hebben handleidingen van verschillende producten. | " }}
-    {{ "06 91057205, 5111 XC, Baarle-Nassau | " }}
-    {{ "www.legacy-app.nl, www.facebook.com/legacy-app" }}
+    <div class="container">
+        <div class="row">
+            © {{ __('misc.copyright') }}
+            {{ "Wij zijn Legacy-app. Wij hebben handleidingen van verschillende producten. | " }}
+            {{ "06 91057205, 5111 XC, Baarle-Nassau | " }}
+            {{ "www.legacy-app.nl, www.facebook.com/legacy-app" }}
+        </div>
+    </div>
 </footer>
 
 
