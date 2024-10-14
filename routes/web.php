@@ -40,6 +40,11 @@ Route::get('/', function () {
     return view('pages.homepage', compact('brands'));
 })->name('home');
 
+// Route voor het doorverwijzen naar de manual met het verhogen van clicks
+
+Route::get('/manual/{id}/redirect', [ManualController::class, 'redirectToManual'])->name('manual.redirect');
+
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
@@ -48,6 +53,10 @@ Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed'
 // Locale routes
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
 
+Route::get('/{brand_id}/{brand_slug}/', [ManualController::class, 'show'])->name('brand.show');
+
+
+Route::get('/manual/{id}/download', [BrandController::class, 'downloadManual'])->name('manual.download');
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 
