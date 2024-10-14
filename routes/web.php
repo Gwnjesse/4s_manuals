@@ -44,6 +44,10 @@ Route::get('/', function () {
 
 Route::get('/manual/{id}/redirect', [ManualController::class, 'redirectToManual'])->name('manual.redirect');
 
+//Contact pagina
+
+Route::get('/pages/contact', [ContactController::class, 'show']);
+
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
