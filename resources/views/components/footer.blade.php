@@ -5,6 +5,7 @@
             {{ "Wij zijn Legacy-app. Wij hebben handleidingen van verschillende producten. | " }}
             {{ "06 91057205, 5111 XC, Baarle-Nassau | " }}
             {{ "www.legacy-app.nl, www.facebook.com/legacy-app" }}
+            <a href="/pages/contact">Contact</a>
         </div>
     </div>
 </footer>
