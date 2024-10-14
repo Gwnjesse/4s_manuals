@@ -15,21 +15,16 @@
 
     <table>
         <tr>
-            @foreach ($manuals as $manual)
-
-
+           @foreach ($manuals as $manual)
                     <td style="border: black solid 3px;">
-
-                        @if ($manual->locally_available)
-                                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                            ({{$manual->filesize_human_readable}})
-                        @else
-                            <a href="{{ $manual->url }}" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                        @endif
+                        <a href="{{ route('manual.redirect', $manual->id) }}" alt="{{ $manual->name }}" title="{{ $manual->name }}" target="{{ $manual->locally_available ? '_self' : '_blank' }}">
+                            {{ $manual->name }}
+                        </a>
+                        ({{$manual->filesize_human_readable}})
                     </td>
-
                 <br />
             @endforeach
+
         </tr>
     </table>
 </x-layouts.app>
