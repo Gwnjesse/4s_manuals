@@ -20,7 +20,17 @@
     ?>
 
     <div class="container">
-        <!-- Example row of columns -->
+                <div class="top10">
+            <h2>top 10 manuals hoi:</h2>
+            <ul>
+                @foreach($topManuals as $manual)
+                    <li>
+                        <a href="/{{ $manual->brand->id }}/{{ Str::slug($manual->brand->name) }}/{{ $manual->id }}/">{{ $manual->name }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
         <div class="row">
 
             @foreach($brands->chunk($chunk_size) as $chunk)
