@@ -53,4 +53,9 @@ class Manual extends Model
 
         return $url; */
     }
+        public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
 }
