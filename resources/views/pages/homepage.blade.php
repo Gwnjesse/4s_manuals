@@ -24,9 +24,16 @@
             <h2>top 10 manuals hoi:</h2>
             <ul>
                 @foreach($topManuals as $manual)
-                    <li>
-                        <a href="/{{ $manual->brand->id }}/{{ Str::slug($manual->brand->name) }}/{{ $manual->id }}/">{{ $manual->name }}</a>
-                    </li>
+                    @if($manual->brand) <!-- Check if the brand exists -->
+                        <li>
+                            <a href="{{ route('manual.redirect', $manual->id) }}">{{ $manual->name }}</a>
+                            <p>Clicks: {{ $manual->clicks }}</p> <!-- Optional: Show number of clicks -->
+                        </li>
+                    @else
+                        <li>
+                            <p>{{ $manual->name }} (No brand available)</p> <!-- Handling case without brand -->
+                        </li>
+                    @endif
                 @endforeach
             </ul>
         </div>
