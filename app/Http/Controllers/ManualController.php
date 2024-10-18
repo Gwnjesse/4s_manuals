@@ -37,4 +37,15 @@ class ManualController extends Controller
         }
     }
 
+        public function showTopManuals()
+    {
+
+        $topManuals = Manual::orderBy('clicks', 'desc')->limit(10)->get();
+
+        $brands = Brand::all()->sortBy('name');
+
+        return view('pages.homepage', compact('topManuals', 'brands'));
+    }
+
+
 }
