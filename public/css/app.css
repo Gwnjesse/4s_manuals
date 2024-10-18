@@ -206,6 +206,10 @@ table {
     border-collapse: collapse;
 }
 
+.top10{
+    background-color: #e9ecef;;
+}
+
 caption {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
