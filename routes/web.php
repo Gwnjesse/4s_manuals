@@ -36,9 +36,16 @@ use App\Http\Controllers\LocaleController;
 
 // Homepage
 Route::get('/', function () {
+    // Fetch brands sorted by name
     $brands = Brand::all()->sortBy('name');
-    return view('pages.homepage', compact('brands'));
+
+    // Fetch top 10 manuals sorted by 'clicks' in descending order
+    $topManuals = \App\Models\Manual::orderBy('clicks', 'desc')->limit(10)->get();
+
+    // Pass both 'brands' and 'topManuals' to the homepage view
+    return view('pages.homepage', compact('brands', 'topManuals'));
 })->name('home');
+
 
 // Route voor het doorverwijzen naar de manual met het verhogen van clicks
 
