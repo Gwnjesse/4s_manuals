@@ -19,6 +19,6 @@
             <gcse:searchbox-only></gcse:searchbox-only>
 
             <a href="/pages/contact">Contact</a>
-        </div><!--/.navbar-collapse -->
+        </div>
     </div>
 </nav>
