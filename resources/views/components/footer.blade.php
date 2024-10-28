@@ -1,17 +1,17 @@
 <footer>
     <div class="container">
         <div class="row">
-            © {{ __('misc.copyright') }}
-            {{ "Wij zijn Legacy-app. Wij hebben handleidingen van verschillende producten. | " }}
-            {{ "06 91057205, 5111 XC, Baarle-Nassau | " }}
-            {{ "www.legacy-app.nl, www.facebook.com/legacy-app" }}
-            <a href="/pages/contact">Contact</a>
+            © {{ __('misc.copyright') }} <br>
+            {{ "Wij zijn Legacy-app. Wij hebben handleidingen van verschillende producten." }} <br>
+            {{ "06 91057205, 5111 XC, Baarle-Nassau" }} <br>
+            {{ "www.legacy-app.nl, www.facebook.com/legacy-app" }} <br>
+            <div id="Baarle-Nassau"><br><br><br><br><a href="/pages/contact">Contact</a></div>
         </div>
     </div>
 </footer>
 
 
-<!-- analytics code -->              
+<!-- analytics code -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -26,10 +26,10 @@
 </script>
 <!-- Einde analytics code -->
 
-<script language="Javascript" type="text/javascript"> 
- 
- if (top.location!= self.location) { 
+<script language="Javascript" type="text/javascript">
+
+ if (top.location!= self.location) {
   top.location = self.location.href
- } 
- 
+ }
+
 </script>
