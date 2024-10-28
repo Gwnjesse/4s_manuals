@@ -29,32 +29,23 @@ use App\Models\Brand;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
 
-// Homepage
 Route::get('/', function () {
-    // Fetch brands sorted by name
     $brands = Brand::all()->sortBy('name');
-
-    // Fetch top 10 manuals sorted by 'clicks' in descending order
     $topManuals = \App\Models\Manual::orderBy('clicks', 'desc')->limit(10)->get();
-
-    // Pass both 'brands' and 'topManuals' to the homepage view
     return view('pages.homepage', compact('brands', 'topManuals'));
 })->name('home');
-
 
 // Route voor het doorverwijzen naar de manual met het verhogen van clicks
 
 Route::get('/manual/{id}/redirect', [ManualController::class, 'redirectToManual'])->name('manual.redirect');
 
-//Contact pagina
-
 Route::get('/pages/contact', [ContactController::class, 'show']);
-
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
